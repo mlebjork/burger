@@ -1,5 +1,6 @@
 var mysql =require ('mysql');
 var connection;
+console.log('dude')
 if (process.env.JAWSDB_URL) {
     console.log("process.env.JAWSDB_URL", process.env.JAWSDB_URL);
     connection = mysql.createConnection(process.env.JAWSDB_URL);
