@@ -1,0 +1,50 @@
+<div class="container">
+
+  <img class="responsive-img logo" src="/assets/img/burger.png"/>
+  
+  <div class="burgers">
+    <div class="row">
+      <div class="col s6">
+        <h4>Menu</h2>
+          <ul class="burger-list">
+            {{#each burgers}}
+            {{#unless devoured}}
+            <li>
+              <img class="icon" src="/assets/img/hamburger-96.png"/>
+              {{burger_name}}
+              <a class="waves-effect waves-light btn-small change-devoured" data-id="{{id}}" data-devoured="{{devoured}}">
+                {{#if devoured}}undevour!{{else}}DEVOUR!{{/if}}</a>
+              <a class="waves-effect waves-light btn-small delete" data-id="{{id}}">delete</a>
+            </li>
+            {{/unless}}
+            {{/each}}
+          </ul>
+      </div>
+
+      <div class="col s6">
+        <h4>Burgers Devoured!</h2>
+          <ul class="burger-list">
+            {{#each burgers}}
+            {{#if devoured}}
+            <li>
+              <img class="icon" src="/assets/img/hamburger-96.png"/>
+              {{burger_name}}
+              <a class="waves-effect waves-light btn-small delete" data-id="{{id}}">delete</a>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="add-burger">
+    <form class="add-form">
+      <div class="form-group">
+        <label for="newburger">Add a Burger:</label>
+        <input type="text" id="newburger" name="burger_name">
+      </div>
+      <button class="btn-small waves-effect waves-light margin-bottom" type="submit" name="action">Add Burger</button>
+    </form>
+  </div>
+</div>
