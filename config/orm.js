@@ -63,21 +63,6 @@ var orm = {
     });
   },
 
-  create: function(vals, cb) {
-    var queryString = `INSERT INTO burgers(burger_name) VALUES ?`
-
-
-    console.log(queryString);
-
-    connection.query(queryString, vals, function(err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
-    });
-  },
-
   // An example of objColVals would be {name: panther, sleepy: true}
   updateOne: function(vals, cb) {
     var queryString = `UPDATE burgers SET devoured = true WHERE id = '${vals}'`;
